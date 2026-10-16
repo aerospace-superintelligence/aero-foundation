@@ -26,7 +26,7 @@ aero-foundation aims to build a model whose engineering judgment is shaped by th
 
 - **Flight control design**: propose gains and architectures that meet stability margins, bandwidth, and time-response requirements.
 - **Aerodynamic databases**: set up and run analyses, then assemble coefficient tables and stability derivatives that agree with the tools.
-- **Handling-qualities analysis**: compute modal characteristics and grade them against MIL-STD-1797A criteria.
+- **Handling-qualities analysis**: compute modal characteristics and grade them against MIL-F-8785C and MIL-STD-1797A flying-qualities criteria (MIL-STD-1797A is Distribution D, so public verifier limits come from MIL-F-8785C).
 - **Requirements traceability**: link requirements to design artifacts and verification cases in the style ARP4754B and DO-178C expect.
 
 ## Approach
@@ -55,16 +55,16 @@ Held-out evaluation tasks, scored by the same tools, gate every checkpoint. Tool
 
 ## Verifiers & Tools
 
-| Tool | Checks | Example reward |
-| --- | --- | --- |
-| [JSBSim](https://github.com/JSBSim-Team/jsbsim) | Nonlinear 6-DOF flight: trim, time responses, closed-loop behavior | Step response meets rise-time and overshoot specs |
-| [AVL](https://web.mit.edu/drela/Public/web/avl/) | Vortex-lattice aero: lift, induced drag, moments, stability derivatives, neutral point | Proposed geometry trims at the target CL with static margin in band |
-| [XFOIL](https://web.mit.edu/drela/Public/web/xfoil/) | 2-D airfoil analysis: polars, transition, pressure distribution | Airfoil meets a cl/cd target at the given Reynolds number |
-| [OpenVSP](https://openvsp.org/) | Parametric geometry, VSPAERO analysis | Geometry is valid and matches area/span constraints |
-| [python-control](https://python-control.readthedocs.io/) | Linear systems: poles, margins, bandwidth, step metrics | Loop meets gain and phase margins with the specified crossover |
-| Handling-qualities criteria | MIL-STD-1797A / MIL-F-8785C modal criteria (short period, CAP, Dutch roll, roll mode, spiral, bandwidth) | Level 1 achieved in every required flight phase |
+| Tool | License | Checks | Example reward |
+| --- | --- | --- | --- |
+| [JSBSim](https://github.com/JSBSim-Team/jsbsim) | LGPL-2.1+ | Nonlinear 6-DOF flight: trim, time responses, closed-loop behavior | Step response meets rise-time and overshoot specs |
+| [AVL](https://web.mit.edu/drela/Public/web/avl/) | GPL | Vortex-lattice aero: lift, induced drag, moments, stability derivatives, neutral point | Proposed geometry trims at the target CL with static margin in band |
+| [XFOIL](https://web.mit.edu/drela/Public/web/xfoil/) | GPL | 2-D airfoil analysis: polars, transition, pressure distribution | Airfoil meets a cl/cd target at the given Reynolds number |
+| [OpenVSP](https://openvsp.org/) | NOSA 1.3 | Parametric geometry, VSPAERO analysis | Geometry is valid and matches area/span constraints |
+| [python-control](https://python-control.readthedocs.io/) | BSD-3-Clause | Linear systems: poles, margins, bandwidth, step metrics | Loop meets gain and phase margins with the specified crossover |
+| Handling-qualities criteria | (in-house, Apache-2.0) | MIL-STD-1797A / MIL-F-8785C modal criteria (short period, CAP, Dutch roll, roll mode, spiral, bandwidth) | Level 1 achieved in every required flight phase |
 
-Full details, licenses, reward formulations, and sample tasks are in [`research/verifiers.md`](research/verifiers.md).
+Twenty-one candidate tools, with reward formulations, throughput assumptions, and sample tasks, are in [`research/verifiers.md`](research/verifiers.md). Phase 0 starts with python-control plus the handling-qualities module, because each check takes milliseconds and is fully deterministic.
 
 ## Certification Philosophy
 
