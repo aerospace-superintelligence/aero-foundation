@@ -1,0 +1,7 @@
+# Aero Foundation — aerospace AI research and tool-verified learning
+
+> Public project and website references. HTML pages are canonical; project goals are not claims of completed implementation.
+
+## Pages
+
+- [Aero Foundation — aerospace AI research and tool-verified learning](https://foundation.aerospace-superintelligence.com/): Open aerospace AI research into continued pretraining and reinforcement learning with checkable engineering-tool rewards. Research and design stage; no trained model released.
