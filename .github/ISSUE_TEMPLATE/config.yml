@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/aerospace-superintelligence/aero-foundation/security/advisories/new
+    about: Report security issues privately. Do not open a public issue.
+  - name: Questions and ideas
+    url: https://github.com/aerospace-superintelligence/aero-foundation/discussions
+    about: Open-ended questions, proposals, and research discussion.

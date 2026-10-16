@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in the code, a verifier, an eval, or the docs is wrong.
+title: "[bug] "
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Commands, inputs, commit hash, tool versions (e.g. JSBSim/AVL/XFOIL build), and seeds.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - verifier / reward
+        - data pipeline
+        - evaluation
+        - training
+        - documentation / site
+        - other
+    validations:
+      required: true
+  - type: checkboxes
+    id: reward
+    attributes:
+      label: Reward integrity
+      options:
+        - label: This bug could let a model earn reward without solving the task (reward hacking / verifier exploit).
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and output
+      render: text

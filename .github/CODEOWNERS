@@ -1,0 +1,7 @@
+# Default owner for everything in the repository.
+* @mmango7474
+
+# Certification and verifier material gets the same owner today; split these
+# out to dedicated reviewers as the team grows.
+/research/certification.md @mmango7474
+/research/verifiers.md     @mmango7474

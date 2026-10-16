@@ -1,0 +1,45 @@
+name: Research / engineering task
+description: A unit of work on one of the four tracks (data, verifiers, eval, certification).
+title: "[track] "
+labels: ["triage"]
+body:
+  - type: dropdown
+    id: track
+    attributes:
+      label: Track
+      options:
+        - data
+        - verifiers
+        - eval
+        - certification
+        - training
+        - infrastructure
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What question does this answer, or what capability does it add?
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Concrete, checkable acceptance criteria. Prefer outputs a script or verifier can check.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and traceability
+      description: What artifacts will this produce (manifests, hashes, logs, eval reports), and where will they live?
+  - type: textarea
+    id: licensing
+    attributes:
+      label: Licensing and data notes
+      description: Any data, tool, or document licensing constraints. Never attach restricted material (SAE, RTCA, AIAA, textbooks) or export-controlled content.

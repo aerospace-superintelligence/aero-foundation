@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use aero-foundation in your research, please cite it as below."
+title: "aero-foundation: an aerospace engineering model trained with tool-verified rewards"
+type: software
+authors:
+  - name: "Aerospace Superintelligence contributors"
+repository-code: "https://github.com/aerospace-superintelligence/aero-foundation"
+url: "https://foundation.aerospace-superintelligence.com"
+license: Apache-2.0
+version: "0.0.0"
+date-released: "2026-10-15"
+keywords:
+  - aerospace
+  - large language models
+  - reinforcement learning
+  - verifiable rewards
+  - flight control
+  - handling qualities
+  - tool qualification
